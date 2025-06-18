@@ -8,7 +8,6 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
-	"github.com/gofiber/fiber/v2/middleware/logger"
 )
 
 // Struct untuk City - standardized field names
@@ -178,7 +177,6 @@ func main() {
 	})
 
 	// Middleware
-	app.Use(logger.New())
 	app.Use(cors.New())
 
 	// Health check endpoint
